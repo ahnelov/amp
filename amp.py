@@ -22,9 +22,7 @@ class TCPHandler(socketserver.BaseRequestHandler):
                 print(self.client_address[0].encode() + b": " + data)
             
             data = data.decode()
-            
-            # FIXME: wrap in try block for IndexError exceptions
-            
+                        
             # Have they sent a command?
             if data[0:4] == "CMDS":
                 
