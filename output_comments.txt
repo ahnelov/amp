@@ -1,0 +1,7 @@
+# Ross Carbonite AMP 0.2
+b'CRAT0007204Vtr1\n' # On connect
+b'CMDS00042001\n' # Play
+b'CMDS0004A016\n' # Cue
+b'CMDS000541421\n' # Lp On
+b'CMDS000541420\n' # Lp Off
+b'CMDS00042000\n' # Stop
