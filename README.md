@@ -17,7 +17,7 @@ This library uses the built-in `socketserver` library, and have no external depe
 
 This library is very easy to implement:
 
-```
+```python
 import amp
 
 server = amp.Server()
@@ -35,7 +35,8 @@ server.serve_forever()
 ```
 
 You can also define your functions without using a lambda:
-```
+
+```python
 import amp
 
 def load(clip):
