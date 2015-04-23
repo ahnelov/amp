@@ -111,7 +111,7 @@ class TCPHandler(socketserver.BaseRequestHandler):
         self.open = False
         
         # Remove from the number of concurrent handlers
-        self.server.handerls = -= 1
+        self.server.handerls -= 1
         
         return
 
