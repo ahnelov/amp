@@ -126,7 +126,7 @@ class Server(socketserver.ThreadingMixIn, socketserver.TCPServer):
         
         # Callbacks
         self.PLAY = None
-        self.CUE  = None # Not possible to send a 8X.16 as response as specifiethed
+        self.CUE  = None # Not possible to send a 8X.16 as response as specified
         self.STOP = None
         self.LOOP = None # Takes one boolean argument (On/Off)
         self.LOOP_ON  = None
