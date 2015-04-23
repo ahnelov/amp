@@ -24,6 +24,10 @@ class TCPHandler(socketserver.BaseRequestHandler):
         print("Client connecting from %s:%d" % (self.client_address[0], 
                                                 self.client_address[1]))
         self.open = True # Connection is open
+        
+        # Add to the number of concurrent handlers
+        self.server.handlers += 1
+        
         return
         
     def handle(self):
@@ -103,6 +107,12 @@ class TCPHandler(socketserver.BaseRequestHandler):
     def finish(self):
         print("Client disconnected: %s:%d" % (self.client_address[0], 
                                                 self.client_address[1]))
+        
+        self.open = False
+        
+        # Remove from the number of concurrent handlers
+        self.server.handerls = -= 1
+        
         return
 
     def ACK(self):
@@ -123,6 +133,8 @@ class Server(socketserver.ThreadingMixIn, socketserver.TCPServer):
                                                 TCPHandler)
         self.daemon_threads = True
         
+        # Number of concurrent handlers. Is this built in anywhere?
+        self.handlers = 0
         
         # Callbacks
         self.PLAY = None
